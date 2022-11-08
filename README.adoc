@@ -1,0 +1,93 @@
+= AsciidocFX_Linux_INSTALLER_BUILD
+life888888
+:experimental:
+:doctype: article
+//:doctype: book
+:encoding: utf-8
+:lang: en
+:toc: left
+:numbered:
+ifdef::env-github[]
+:toc:
+:toc-placement: preamble
+endif::[]
+ifndef::env-github[]
+:toc:
+:toc-placement: left
+endif::[]
+:imagesdir: images
+:asciidocfx-linux-installer-build-version: 0.1.0
+:download-root: https://github.com/life888888/AsciidocFX_Linux_INSTALLER_BUILD
+/releases/download/v{asciidocfx-linux-installer-build-version}
+
+This is a AsciidocFX Linux Installer Build script. Just to repack AsciidocFX Linux to Linux Native Installer File (.deb or .rpm).
+
+I try to solve some issue here Only for Linux, because Windows and MacOS have its native installer.
+
+* https://github.com/asciidocfx/AsciidocFX/issues/545[Proper installers for Linux #545]
+* https://github.com/asciidocfx/AsciidocFX/issues/117[Add a Splash screen #117]
+* https://github.com/asciidocfx/AsciidocFX/issues/433[Add a Splash screen #433]
+* Add file-associations support for .adoc open
+
+I am not change any source code or re-compile. I just use jpackage to repack it.
+
+JRE is come from origin AsciidocFX_Linux.tar.gz.
+
+== Download
+
+* ${download-root}/asciidocfx_1.8.2_amd64.deb[deb (Ubuntu)]
+* ${download-root}/asciidocfx-1.8.2-1.x86_64.rpm[rpm (Oracle Linux, CentOS)]
+
+Now you can install .deb or .rpm file in your way.
+
+After install, you can click .adoc file and open it.
+
+== Build
+
+You can build **.rpm** only on the Rpm based system (Oracle Linux).
+
+You can build **.deb** only on the Deb based system (Ubuntu).
+
+=== Pre-requirement
+
+JDK 19:: Temurin 19.0.1 or Other JDK 19
+
+Oracle Linux:: RPM Development Tools +
++
+`sudo yum update` +
++
+`sudo yum groupinstall 'RPM Development Tools'`
+
+
+=== Download Source
+
+Download https://github.com/life888888/AsciidocFX_Linux_INSTALLER_BUILD/archive/refs/heads/main.zip[the source code]
+
+=== Build
+
+Unzip main.zip
+
+`cd main/AsciidocFX_Linux_INSTALLER_BUILD`
+
+`./build.sh`
+
+`cd releases`
+
+You can find **asciidocfx_1.8.2_amd64.deb** or **asciidocfx-1.8.2-1.x86_64.rpm**.
+
+=== Clean
+
+You can delete these folders. If You finish your build.
+
+* build
+* local-cache
+* releases 
+
+== License
+MIT License. - Copyright (c) 2022 life888888
+
+=== Third party license
+Original https://github.com/asciidocfx/AsciidocFX[AsciidocFX] - asciidocfx/AsciidocFX is licensed under the
+Apache License 2.0
+
+https://github.com/asciidocfx/AsciidocFX/releases/download/v1.8.2/AsciidocFX_Linux.tar.gz[AsciidocFX_Linux.tar.gz]
